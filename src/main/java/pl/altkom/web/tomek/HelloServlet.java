@@ -16,6 +16,7 @@ public class HelloServlet extends HttpServlet {
         pw.println("<TITLE>Hello</TITLE>");
         pw.println("</HEAD><BODY>");
         pw.println("<H3>Hello World!</H3>");
+        pw.println("<a href=\"makeForm.html\">Link</a>");
         pw.println("</BODY></HTML>");
     }
 }
