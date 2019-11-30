@@ -22,7 +22,7 @@ public class ControllerServlet extends HttpServlet {
 //        if (req.getParameter("name") != null){
 //            pw.print(req.getParameter("name") + "<BR>");
 //        }
-        pw.println("<a href=\"makeForm.html\">Link</a>");
+        pw.println("<a href=\"makeForm.html\">Make your choice</a>");
         pw.println("</BODY></HTML>");
     }
 }
