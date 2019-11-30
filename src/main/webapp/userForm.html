@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User data form</title>
+</head>
+<body>
+    <form action="save-user-data" method="POST">
+        <label> Name: </label>
+        <input type="text" name="name" value="--write your name--"><br>
+        <label> Surname: </label>
+        <input type="text" name="surname" value="--write your surname--"><br>
+        <label> Age: </label><br>
+        <select name="age">
+            <option value="">--choose your age--</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+        </select><br>
+        <label> Region: </label><br>
+        <select name="region">
+            <option value="">--choose your region--</option>
+            <option value="africa">Africa</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="north america">North America</option>
+        </select><br>
+        <label> Gender: </label><br>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="other"> Other<br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
