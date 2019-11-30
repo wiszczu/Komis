@@ -25,6 +25,8 @@ public class SuccessfulSaveServlet extends HttpServlet {
         out.println("</HEAD><BODY>");
         out.println("<H3>New user has been added.</H3>");
         out.println("<a href=\"userForm.html\">Add another user!</a>");
+        out.println("<a href=\"/users\">Show users list</a>");
+        out.println("</BODY></HTML>");
         out.close();
     }
 }

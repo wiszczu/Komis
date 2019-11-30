@@ -31,6 +31,16 @@
     <servlet-class>pl.altkom.web.tomek.RedirectServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>users</servlet-name>
+    <servlet-class>pl.altkom.web.tomek.GetUserTableServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>users</servlet-name>
+    <url-pattern>/users</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>hello</servlet-name>
     <url-pattern>/hello</url-pattern>
