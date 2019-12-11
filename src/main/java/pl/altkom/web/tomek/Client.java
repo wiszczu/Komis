@@ -1,7 +1,5 @@
 package pl.altkom.web.tomek;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
 
 public class Client {
     private String name;
@@ -11,16 +9,8 @@ public class Client {
     private String gender;
 
     public Client() {
-
     }
 
-//    public Client(HttpServletRequest request) {
-//        this.name = request.getParameter("name");
-//        this.surname = request.getParameter("surname");
-//        this.age = request.getParameter("age");
-//        this.region = request.getParameter("region");
-//        this.gender = request.getParameter("gender");
-//    }
 
     public String getName() {
         return name;

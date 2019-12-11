@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class SuccessfulSaveServlet extends HttpServlet {
+public class SuccessfullSaveServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req
             , HttpServletResponse resp)
@@ -23,7 +23,7 @@ public class SuccessfulSaveServlet extends HttpServlet {
         out.println("<HTML><HEAD>");
         out.println("<TITLE>New record</TITLE>");
         out.println("</HEAD><BODY>");
-        out.println("<H3>New user has been added.</H3>");
+        out.println("<H3>New record has been added successfully.</H3>");
         out.println("<a href=\"userForm.html\">Add another user!</a>");
         out.println("<a href=\"/users\">Show users list</a>");
         out.println("</BODY></HTML>");

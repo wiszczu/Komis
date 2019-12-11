@@ -18,12 +18,17 @@
 
   <servlet>
     <servlet-name>success</servlet-name>
-    <servlet-class>pl.altkom.web.tomek.SuccessfulSaveServlet</servlet-class>
+    <servlet-class>pl.altkom.web.tomek.SuccessfullSaveServlet</servlet-class>
   </servlet>
 
   <servlet>
     <servlet-name>save-user-data</servlet-name>
     <servlet-class>pl.altkom.web.tomek.SaveClientDataServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>save-car-data</servlet-name>
+    <servlet-class>pl.altkom.web.tomek.SaveCarDataServlet</servlet-class>
   </servlet>
 
   <servlet>
@@ -54,6 +59,11 @@
   <servlet-mapping>
     <servlet-name>save-user-data</servlet-name>
     <url-pattern>/save-user-data</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>save-car-data</servlet-name>
+    <url-pattern>/save-car-data</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
