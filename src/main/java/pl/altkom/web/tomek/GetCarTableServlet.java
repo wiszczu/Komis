@@ -2,7 +2,6 @@ package pl.altkom.web.tomek;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-public class GetUserTableServlet extends HttpServlet {
+public class GetCarTableServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req
             , HttpServletResponse resp) throws ServletException, IOException
@@ -22,28 +21,25 @@ public class GetUserTableServlet extends HttpServlet {
             InitialContext initCtx = new InitialContext();
             Context context = (Context) initCtx.lookup("java:comp/env");
             DataSource ds = (DataSource) context.lookup(getServletContext().getInitParameter("dataSource"));
-            ClientDataDAO dao = new ClientDataDAOImpl();
-            List<Client> users = dao.readClientsData(ds);
-            out.println("<html><head><title> Lista userów </title></head><body>");
-            for (Object o : users){
-                Client c = (Client)o;
+            CarDataDAO dao = new CarDataDAOImpl();
+            List<Car> cars = dao.readCarsData(ds);
+            out.println("<html><head><title> Lista samochodów </title></head><body>");
+            for (Object o : cars){
+                Car car = (Car)o;
                 out.println("<table>");
                 // - poczatek kolumny
                 out.println("<tr>");
                 out.println("<th>");
-                out.println(c.getName());
+                out.println(car.getBrand());
                 out.println("</th>");
                 out.println("<th>");
-                out.println(c.getSurname());
+                out.println(car.getModel());
                 out.println("</th>");
                 out.println("<th>");
-                out.println(c.getAge());
+                out.println(car.getYearOfProduction());
                 out.println("</th>");
                 out.println("<th>");
-                out.println(c.getRegion());
-                out.println("</th>");
-                out.println("<th>");
-                out.println(c.getGender());
+                out.println(car.getMileage());
                 out.println("</th>");
                 out.println("</tr>");
                 out.println("</table>");

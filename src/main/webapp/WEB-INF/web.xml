@@ -41,9 +41,19 @@
     <servlet-class>pl.altkom.web.tomek.GetUserTableServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>cars</servlet-name>
+    <servlet-class>pl.altkom.web.tomek.GetCarTableServlet</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>users</servlet-name>
     <url-pattern>/users</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>cars</servlet-name>
+    <url-pattern>/cars</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
