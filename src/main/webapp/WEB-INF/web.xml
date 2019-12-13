@@ -11,6 +11,11 @@
   </context-param>
 
 
+  <listener>
+    <listener-class>pl.altkom.web.tomek.SessionCounter</listener-class>
+  </listener>
+
+
   <servlet>
     <servlet-name>hello</servlet-name>
     <servlet-class>pl.altkom.web.tomek.ControllerServlet</servlet-class>
@@ -45,6 +50,7 @@
     <servlet-name>cars</servlet-name>
     <servlet-class>pl.altkom.web.tomek.GetCarTableServlet</servlet-class>
   </servlet>
+
 
   <servlet-mapping>
     <servlet-name>users</servlet-name>
@@ -81,9 +87,16 @@
     <url-pattern>/redirect</url-pattern>
   </servlet-mapping>
 
+
+  <session-config>
+    <session-timeout>20</session-timeout>
+  </session-config>
+
+
   <welcome-file-list>
     <welcome-file>hello</welcome-file>
   </welcome-file-list>
+
 
   <resource-ref>
     <description>DB Connection</description>
