@@ -1,4 +1,8 @@
-package pl.altkom.web.tomek;
+package pl.altkom.web.tomek.servlets;
+
+import pl.altkom.web.tomek.Client;
+import pl.altkom.web.tomek.dao.ClientDataDAO;
+import pl.altkom.web.tomek.dao.ClientDataDAOImpl;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;

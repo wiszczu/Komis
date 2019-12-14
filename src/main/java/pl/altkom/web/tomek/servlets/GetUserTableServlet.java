@@ -1,8 +1,10 @@
-package pl.altkom.web.tomek;
+package pl.altkom.web.tomek.servlets;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
+import pl.altkom.web.tomek.Client;
+import pl.altkom.web.tomek.dao.ClientDataDAO;
+import pl.altkom.web.tomek.dao.ClientDataDAOImpl;
+
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,22 +17,45 @@ import java.util.List;
 
 @WebServlet ("/users")
 public class GetUserTableServlet extends HttpServlet {
+
+
+    @Resource(name="jdbc:komis")
+    private DataSource ds;
     @Override
     protected void doGet(HttpServletRequest req
             , HttpServletResponse resp) throws ServletException, IOException
     {
         PrintWriter out = resp.getWriter();
         try {
-            InitialContext initCtx = new InitialContext();
-            Context context = (Context) initCtx.lookup("java:comp/env");
-            DataSource ds = (DataSource) context.lookup(getServletContext().getInitParameter("dataSource"));
+
+            // linijki nizej zastapiono wtrzyknieciem zaleznosci - patrz wyzej
+//            InitialContext initCtx = new InitialContext();
+//            Context context = (Context) initCtx.lookup("java:comp/env");
+//            DataSource ds = (DataSource) context.lookup(getServletContext()
+//                    .getInitParameter("dataSource"));
             ClientDataDAO dao = new ClientDataDAOImpl();
             List<Client> users = dao.readClientsData(ds);
             out.println("<html><head><title> Lista userów </title></head><body>");
-            for (Object o : users){
-                Client c = (Client)o;
-                out.println("<table>");
-                // - poczatek kolumny
+            out.println("<table>");
+            out.println("<tr>");
+            out.println("<th>");
+            out.println("Name");
+            out.println("</th>");
+            out.println("<th>");
+            out.println("Surname");
+            out.println("</th>");
+            out.println("<th>");
+            out.println("Age");
+            out.println("</th>");
+            out.println("<th>");
+            out.println("Region");
+            out.println("</th>");
+            out.println("<th>");
+            out.println("Gender");
+            out.println("</th>");
+            out.println("</tr>");
+            for (Object o : users) {
+                Client c = (Client) o;
                 out.println("<tr>");
                 out.println("<th>");
                 out.println(c.getName());
@@ -48,11 +73,9 @@ public class GetUserTableServlet extends HttpServlet {
                 out.println(c.getGender());
                 out.println("</th>");
                 out.println("</tr>");
-                out.println("</table>");
-                // - koniec kolumny - analogicznie dla pozostalych parametrow
-                out.println("</body></html>");
             }
-
+            out.println("</table>");
+            out.println("</body></html>");
         } catch (Exception e) {
             e.printStackTrace();
         }

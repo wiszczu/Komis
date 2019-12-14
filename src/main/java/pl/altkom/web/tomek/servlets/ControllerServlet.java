@@ -1,4 +1,6 @@
-package pl.altkom.web.tomek;
+package pl.altkom.web.tomek.servlets;
+
+import pl.altkom.web.tomek.listeners.SessionCounter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

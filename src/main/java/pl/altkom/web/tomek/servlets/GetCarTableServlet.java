@@ -1,7 +1,10 @@
-package pl.altkom.web.tomek;
+package pl.altkom.web.tomek.servlets;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
+import pl.altkom.web.tomek.Car;
+import pl.altkom.web.tomek.dao.CarDataDAO;
+import pl.altkom.web.tomek.dao.CarDataDAOImpl;
+
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,15 +17,19 @@ import java.util.List;
 
 @WebServlet ("/cars")
 public class GetCarTableServlet extends HttpServlet {
+
+    @Resource(name="jdbc:komis")
+    private DataSource ds;
     @Override
     protected void doGet(HttpServletRequest req
             , HttpServletResponse resp) throws ServletException, IOException
     {
         PrintWriter out = resp.getWriter();
         try {
-            InitialContext initCtx = new InitialContext();
-            Context context = (Context) initCtx.lookup("java:comp/env");
-            DataSource ds = (DataSource) context.lookup(getServletContext().getInitParameter("dataSource"));
+//            InitialContext initCtx = new InitialContext();
+//            Context context = (Context) initCtx.lookup("java:comp/env");
+//            DataSource ds = (DataSource) context.lookup(getServletContext()
+//                    .getInitParameter("dataSource"));
             CarDataDAO dao = new CarDataDAOImpl();
             List<Car> cars = dao.readCarsData(ds);
             out.println("<html><head><title> Lista samochodów </title></head><body>");

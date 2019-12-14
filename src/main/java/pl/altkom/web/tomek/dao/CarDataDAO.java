@@ -1,4 +1,6 @@
-package pl.altkom.web.tomek;
+package pl.altkom.web.tomek.dao;
+
+import pl.altkom.web.tomek.Car;
 
 import javax.sql.DataSource;
 import java.util.List;

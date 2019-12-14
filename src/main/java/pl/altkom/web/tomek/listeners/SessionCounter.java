@@ -1,8 +1,11 @@
-package pl.altkom.web.tomek;
+package pl.altkom.web.tomek.listeners;
 
+import javax.faces.event.ListenerFor;
+import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
+@WebListener
 public class SessionCounter implements HttpSessionListener {
 
     private static int activeSessions = 0;

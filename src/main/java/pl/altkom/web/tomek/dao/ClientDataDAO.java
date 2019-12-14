@@ -1,4 +1,6 @@
-package pl.altkom.web.tomek;
+package pl.altkom.web.tomek.dao;
+
+import pl.altkom.web.tomek.Client;
 
 import java.util.List;
 import javax.sql.DataSource;

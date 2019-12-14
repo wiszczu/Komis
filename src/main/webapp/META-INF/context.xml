@@ -3,6 +3,7 @@
          reloadable="true"
          crossContext="true"
          antiJARLocking="true">
+
     <Resource name="jdbc:komis"
               auth="Container"
               type="javax.sql.DataSource"

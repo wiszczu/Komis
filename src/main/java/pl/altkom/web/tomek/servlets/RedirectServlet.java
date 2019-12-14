@@ -1,4 +1,4 @@
-package pl.altkom.web.tomek;
+package pl.altkom.web.tomek.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

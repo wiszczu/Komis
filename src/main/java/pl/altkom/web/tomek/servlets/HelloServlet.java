@@ -1,4 +1,4 @@
-package pl.altkom.web.tomek;
+package pl.altkom.web.tomek.servlets;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
