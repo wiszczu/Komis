@@ -15,77 +15,87 @@
     <listener-class>pl.altkom.web.tomek.SessionCounter</listener-class>
   </listener>
 
-
-  <servlet>
-    <servlet-name>hello</servlet-name>
-    <servlet-class>pl.altkom.web.tomek.ControllerServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>success</servlet-name>
-    <servlet-class>pl.altkom.web.tomek.SuccessfullSaveServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>save-user-data</servlet-name>
-    <servlet-class>pl.altkom.web.tomek.SaveClientDataServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>save-car-data</servlet-name>
-    <servlet-class>pl.altkom.web.tomek.SaveCarDataServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>redirect</servlet-name>
-    <servlet-class>pl.altkom.web.tomek.RedirectServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>users</servlet-name>
-    <servlet-class>pl.altkom.web.tomek.GetUserTableServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>cars</servlet-name>
-    <servlet-class>pl.altkom.web.tomek.GetCarTableServlet</servlet-class>
-  </servlet>
+  <listener>
+    <listener-class>pl.altkom.web.tomek.SavedClientListener</listener-class>
+  </listener>
 
 
-  <servlet-mapping>
-    <servlet-name>users</servlet-name>
-    <url-pattern>/users</url-pattern>
-  </servlet-mapping>
+<!--  <servlet>-->
+<!--    <servlet-name>hello</servlet-name>-->
+<!--    <servlet-class>pl.altkom.web.tomek.ControllerServlet</servlet-class>-->
+<!--  </servlet>-->
 
-  <servlet-mapping>
-    <servlet-name>cars</servlet-name>
-    <url-pattern>/cars</url-pattern>
-  </servlet-mapping>
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>hello</servlet-name>-->
+<!--    <url-pattern>/hello</url-pattern>-->
+<!--  </servlet-mapping>-->
 
-  <servlet-mapping>
-    <servlet-name>hello</servlet-name>
-    <url-pattern>/hello</url-pattern>
-  </servlet-mapping>
 
-  <servlet-mapping>
-    <servlet-name>success</servlet-name>
-    <url-pattern>/successful-save</url-pattern>
-  </servlet-mapping>
+<!--  <servlet>-->
+<!--    <servlet-name>success</servlet-name>-->
+<!--    <servlet-class>pl.altkom.web.tomek.SuccessfullSaveServlet</servlet-class>-->
+<!--  </servlet>-->
 
-  <servlet-mapping>
-    <servlet-name>save-user-data</servlet-name>
-    <url-pattern>/save-user-data</url-pattern>
-  </servlet-mapping>
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>success</servlet-name>-->
+<!--    <url-pattern>/successful-save</url-pattern>-->
+<!--  </servlet-mapping>-->
 
-  <servlet-mapping>
-    <servlet-name>save-car-data</servlet-name>
-    <url-pattern>/save-car-data</url-pattern>
-  </servlet-mapping>
 
-  <servlet-mapping>
-    <servlet-name>redirect</servlet-name>
-    <url-pattern>/redirect</url-pattern>
-  </servlet-mapping>
+<!--  <servlet>-->
+<!--    <servlet-name>save-user-data</servlet-name>-->
+<!--    <servlet-class>pl.altkom.web.tomek.SaveClientDataServlet</servlet-class>-->
+<!--  </servlet>-->
+
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>save-user-data</servlet-name>-->
+<!--    <url-pattern>/save-user-data</url-pattern>-->
+<!--  </servlet-mapping>-->
+
+
+<!--  <servlet>-->
+<!--    <servlet-name>save-car-data</servlet-name>-->
+<!--    <servlet-class>pl.altkom.web.tomek.SaveCarDataServlet</servlet-class>-->
+<!--  </servlet>-->
+
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>save-car-data</servlet-name>-->
+<!--    <url-pattern>/save-car-data</url-pattern>-->
+<!--  </servlet-mapping>-->
+
+
+<!--  <servlet>-->
+<!--    <servlet-name>redirect</servlet-name>-->
+<!--    <servlet-class>pl.altkom.web.tomek.RedirectServlet</servlet-class>-->
+<!--  </servlet>-->
+
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>redirect</servlet-name>-->
+<!--    <url-pattern>/redirect</url-pattern>-->
+<!--  </servlet-mapping>-->
+
+
+<!--  <servlet>-->
+<!--    <servlet-name>users</servlet-name>-->
+<!--    <servlet-class>pl.altkom.web.tomek.GetUserTableServlet</servlet-class>-->
+<!--  </servlet>-->
+
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>users</servlet-name>-->
+<!--    <url-pattern>/users</url-pattern>-->
+<!--  </servlet-mapping>-->
+
+
+<!--  <servlet>-->
+<!--    <servlet-name>cars</servlet-name>-->
+<!--    <servlet-class>pl.altkom.web.tomek.GetCarTableServlet</servlet-class>-->
+<!--  </servlet>-->
+
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>cars</servlet-name>-->
+<!--    <url-pattern>/cars</url-pattern>-->
+<!--  </servlet-mapping>-->
+
 
 
   <session-config>
