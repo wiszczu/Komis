@@ -5,10 +5,12 @@ import pl.altkom.web.tomek.Client;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
+import javax.swing.plaf.nimbus.State;
 
 public class ClientDataDAOImpl implements ClientDataDAO {
 
@@ -47,16 +49,17 @@ public class ClientDataDAOImpl implements ClientDataDAO {
 	        conn = dataSource.getConnection();
 	        
 	        PreparedStatement pstmt = conn.prepareStatement(
-	        "SELECT imie, nazwisko, region, wiek, mezczyzna FROM klient");
+	        "SELECT id, imie, nazwisko, region, wiek, mezczyzna FROM klient");
 	
 	        ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
 				Client cl = new Client();
-				cl.setName(rs.getString(1));
-				cl.setSurname(rs.getString(2));
-				cl.setRegion(rs.getString(3));
-				cl.setAge(rs.getInt(4));
-				if (rs.getInt(5) == 1) {
+				cl.setId(rs.getInt(1));
+				cl.setName(rs.getString(2));
+				cl.setSurname(rs.getString(3));
+				cl.setRegion(rs.getString(4));
+				cl.setAge(rs.getInt(5));
+				if (rs.getInt(6) == 1) {
 					cl.setGender("male");
 				} else {
 					cl.setGender("female");
@@ -76,5 +79,36 @@ public class ClientDataDAOImpl implements ClientDataDAO {
 
 	private int generateId() {
 		return ((int) (System.currentTimeMillis() % 100000)) + 100000;
+	}
+
+	@Override
+	public void removeClient(String name, String surname, DataSource dataSource) throws Exception {
+
+		Connection connection = null;
+		try {
+			connection = dataSource.getConnection();
+			connection.createStatement()
+					.executeUpdate("DELETE FROM klient WHERE " +
+							"imie = '" + name + "' AND nazwisko = '" + surname + "';");
+		} finally {
+			if (connection != null) {
+				connection.close();
+			}
+		}
+	}
+
+	@Override
+	public void removeClient(int id, DataSource dataSource) throws Exception {
+		Connection connection = null;
+		try {
+			connection = dataSource.getConnection();
+			connection.createStatement()
+					.executeUpdate("DELETE FROM klient WHERE id = " + id + ";");
+		} finally {
+			if (connection != null) {
+				connection.close();
+			}
+		}
+
 	}
 }

@@ -2,6 +2,7 @@ package pl.altkom.web.tomek;
 
 
 public class Client {
+    private int id;
     private String name;
     private String surname;
     private int age;
@@ -50,5 +51,13 @@ public class Client {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

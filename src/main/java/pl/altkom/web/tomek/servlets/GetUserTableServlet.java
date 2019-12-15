@@ -35,47 +35,9 @@ public class GetUserTableServlet extends HttpServlet {
 //                    .getInitParameter("dataSource"));
             ClientDataDAO dao = new ClientDataDAOImpl();
             List<Client> users = dao.readClientsData(ds);
-            out.println("<html><head><title> Lista userów </title></head><body>");
-            out.println("<table>");
-            out.println("<tr>");
-            out.println("<th>");
-            out.println("Name");
-            out.println("</th>");
-            out.println("<th>");
-            out.println("Surname");
-            out.println("</th>");
-            out.println("<th>");
-            out.println("Age");
-            out.println("</th>");
-            out.println("<th>");
-            out.println("Region");
-            out.println("</th>");
-            out.println("<th>");
-            out.println("Gender");
-            out.println("</th>");
-            out.println("</tr>");
-            for (Object o : users) {
-                Client c = (Client) o;
-                out.println("<tr>");
-                out.println("<th>");
-                out.println(c.getName());
-                out.println("</th>");
-                out.println("<th>");
-                out.println(c.getSurname());
-                out.println("</th>");
-                out.println("<th>");
-                out.println(c.getAge());
-                out.println("</th>");
-                out.println("<th>");
-                out.println(c.getRegion());
-                out.println("</th>");
-                out.println("<th>");
-                out.println(c.getGender());
-                out.println("</th>");
-                out.println("</tr>");
-            }
-            out.println("</table>");
-            out.println("</body></html>");
+            req.setAttribute("clList", users);
+            req.getRequestDispatcher("userList.jsp").forward(req,resp);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
