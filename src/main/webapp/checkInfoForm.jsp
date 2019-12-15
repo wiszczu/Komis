@@ -34,6 +34,11 @@
     </tr>
 </table>
 <form action="save-car-data">
+    <input type="hidden" name="brand" value="<%= request.getParameter("brand")%>">
+    <input type="hidden" name="model" value="<%= request.getParameter("model")%>">
+    <input type="hidden" name="production" value="<%= request.getParameter("production")%>">
+    <input type="hidden" name="mileage" value="<%= request.getParameter("mileage")%>">
+    <input type="hidden" name="capacity" value="<%= request.getParameter("capacity")%>">
     <input type="submit" value="Accept">
 </form>
 

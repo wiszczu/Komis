@@ -111,4 +111,9 @@ public class ClientDataDAOImpl implements ClientDataDAO {
 		}
 
 	}
+
+	@Override
+	public void updateClient(int id, DataSource dataSource) throws Exception {
+
+	}
 }

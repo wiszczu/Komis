@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="pl.altkom.web.tomek.Client" %><%--
+<%@ page import="pl.altkom.web.tomek.Client" %>
+<%@ page import="pl.altkom.web.tomek.Car" %><%--
   Created by IntelliJ IDEA.
   User: student
   Date: 15.12.2019
@@ -16,36 +17,35 @@
 
 <table>
     <tr>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Age</th>
-        <th>Region</th>
-        <th>Gender</th>
-        <th>Delete</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Produced in</th>
+        <th>Mileage [km]</th>
+        <th>Capacity [passengers]</th>
     </tr>
     <% Object oList = request.getAttribute("clList");%>
     <% List list = (List) oList; %>
 
     <% for (Object o : list) {%>
-    <% Client c = (Client) o;%>
+    <% Car c = (Car) o;%>
     <tr>
-        <td><%=c.getName()%></td>
-        <td><%=c.getSurname()%></td>
-        <td><%=c.getAge()%></td>
-        <td><%=c.getRegion()%></td>
-        <td><%=c.getGender()%></td>
+        <td><%=c.getBrand()%></td>
+        <td><%=c.getModel()%></td>
+        <td><%=c.getYearOfProduction()%></td>
+        <td><%=c.getMileage()%></td>
+        <td><%=c.getCapacity()%></td>
         <td>
-            <form action = "delete-user-by-id">
+            <form action = "">
                 <input type="hidden" name="id" value="<%=c.getId()%>">
                 <input type="submit" value="Delete">
             </form>
-            <form action = "edit-user-by-id">
+            <form action = "">
                 <input type="hidden" name="id" value="<%=c.getId()%>">
-                <input type="hidden" name="name" value="<%=c.getName()%>">
-                <input type="hidden" name="surname" value="<%=c.getSurname()%>">
-                <input type="hidden" name="age" value="<%=c.getAge()%>">
-                <input type="hidden" name="region" value="<%=c.getRegion()%>">
-                <input type="hidden" name="gender" value="<%=c.getGender()%>">
+                <input type="hidden" name="name" value="<%=c.getBrand()%>">
+                <input type="hidden" name="surname" value="<%=c.getModel()%>">
+                <input type="hidden" name="age" value="<%=c.getYearOfProduction()%>">
+                <input type="hidden" name="region" value="<%=c.getMileage()%>">
+                <input type="hidden" name="gender" value="<%=c.getCapacity()%>">
                 <input type="submit" value="Edit">
             </form>
         </td>
