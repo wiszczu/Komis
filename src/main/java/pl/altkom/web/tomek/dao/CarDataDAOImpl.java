@@ -19,14 +19,15 @@ public class CarDataDAOImpl implements CarDataDAO {
 	        con = dataSource.getConnection();
 	        
 	        PreparedStatement pstmt = con.prepareStatement(
-	        "INSERT INTO samochód(id, marka, model, produkcja, przebieg) VALUES (?,?,?,?,?)");
+	        "INSERT INTO samochód(id, marka, model, produkcja, przebieg, pojemnosc) VALUES (?,?,?,?,?,?)");
 	
 	        pstmt.setInt(1, generateId());
 	        pstmt.setString(2, car.getBrand());
 	        pstmt.setString(3, car.getModel());
 	        pstmt.setInt(4, car.getYearOfProduction());
-	        pstmt.setInt(5, car.getMileage());
-	        
+	        pstmt.setString(5, car.getMileage());
+	        pstmt.setString(6, car.getCapacity());
+
 	        pstmt.executeUpdate();
 	        pstmt.close();
         } finally {
@@ -45,15 +46,17 @@ public class CarDataDAOImpl implements CarDataDAO {
 	        conn = dataSource.getConnection();
 	        
 	        PreparedStatement pstmt = conn.prepareStatement(
-	        "SELECT marka, model, produkcja, przebieg FROM samochód");
+	        "SELECT id, marka, model, produkcja, przebieg, pojemnosc FROM samochód");
 	
 	        ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
 				Car car = new Car();
-				car.setBrand(rs.getString(1));
-				car.setModel(rs.getString(2));
-				car.setYearOfProduction(rs.getInt(3));
-				car.setMileage(rs.getInt(4));
+				car.setId(rs.getInt(1));
+				car.setBrand(rs.getString(2));
+				car.setModel(rs.getString(3));
+				car.setYearOfProduction(rs.getInt(4));
+				car.setMileage(rs.getString(5));
+				car.setCapacity(rs.getString(6));
 				cars.add(car);
 			}
 

@@ -1,11 +1,12 @@
 package pl.altkom.web.tomek;
 
 public class Car {
-
+    private int id;
     private String brand;
     private String model;
     private int yearOfProduction;
-    private int mileage;
+    private String mileage;
+    private String capacity;
 
     public Car(){
 
@@ -35,11 +36,27 @@ public class Car {
         this.yearOfProduction = yearOfProduction;
     }
 
-    public int getMileage() {
+    public String getMileage() {
         return mileage;
     }
 
-    public void setMileage(int mileage) {
+    public void setMileage(String mileage) {
         this.mileage = mileage;
+    }
+
+    public String getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(String capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

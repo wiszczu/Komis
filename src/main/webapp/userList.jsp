@@ -39,6 +39,15 @@
                 <input type="hidden" name="id" value="<%=c.getId()%>">
                 <input type="submit" value="Delete">
             </form>
+            <form action = "edit-user">
+                <input type="hidden" name="id" value="<%=c.getId()%>">
+                <input type="hidden" name="name" value="<%=c.getName()%>">
+                <input type="hidden" name="surname" value="<%=c.getSurname()%>">
+                <input type="hidden" name="age" value="<%=c.getAge()%>">
+                <input type="hidden" name="region" value="<%=c.getRegion()%>">
+                <input type="hidden" name="gender" value="<%=c.getGender()%>">
+                <input type="submit" value="Edit">
+            </form>
         </td>
     </tr>
     <%}%>
