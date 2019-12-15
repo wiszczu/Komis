@@ -26,9 +26,9 @@ public class SuccessfullSaveServlet extends HttpServlet {
         out.println("<TITLE>New record</TITLE>");
         out.println("</HEAD><BODY>");
         out.println("<H3>New record has been added successfully.</H3>");
-        out.println("<a href=\"userForm.html\">Add another user!</a><br>");
+        out.println("<a href=\"userForm.jsp\">Add another user!</a><br>");
         out.println("<a href=\"users\">Show users list</a><br><br>");
-        out.println("<a href=\"carForm.html\">Add another car!</a><br>");
+        out.println("<a href=\"carForm.jsp\">Add another car!</a><br>");
         out.println("<a href=\"cars\">Show cars list</a>");
         out.println("</BODY></HTML>");
         out.close();

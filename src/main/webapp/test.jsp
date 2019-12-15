@@ -1,4 +1,4 @@
-<%--
+<%--added BASIC authentication for entering /hello page
   Created by IntelliJ IDEA.
   User: student
   Date: 14.12.2019
