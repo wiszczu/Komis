@@ -45,10 +45,13 @@ public class GetCarTableServlet extends HttpServlet {
                 out.println(car.getModel());
                 out.println("</th>");
                 out.println("<th>");
-                out.println(car.getYearOfProduction());
+                out.println(car.getProduction());
                 out.println("</th>");
                 out.println("<th>");
                 out.println(car.getMileage());
+                out.println("</th>");
+                out.println("<th>");
+                out.println(car.getCapacity());
                 out.println("</th>");
                 out.println("</tr>");
                 out.println("</table>");

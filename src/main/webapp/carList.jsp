@@ -8,6 +8,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Title</title>
@@ -31,7 +32,7 @@
     <tr>
         <td><%=c.getBrand()%></td>
         <td><%=c.getModel()%></td>
-        <td><%=c.getYearOfProduction()%></td>
+        <td><%=c.getProduction()%></td>
         <td><%=c.getMileage()%></td>
         <td><%=c.getCapacity()%></td>
         <td>
@@ -43,7 +44,7 @@
                 <input type="hidden" name="id" value="<%=c.getId()%>">
                 <input type="hidden" name="name" value="<%=c.getBrand()%>">
                 <input type="hidden" name="surname" value="<%=c.getModel()%>">
-                <input type="hidden" name="age" value="<%=c.getYearOfProduction()%>">
+                <input type="hidden" name="age" value="<%=c.getProduction()%>">
                 <input type="hidden" name="region" value="<%=c.getMileage()%>">
                 <input type="hidden" name="gender" value="<%=c.getCapacity()%>">
                 <input type="submit" value="Edit">

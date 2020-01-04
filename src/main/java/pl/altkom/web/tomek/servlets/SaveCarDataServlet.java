@@ -5,8 +5,6 @@ import pl.altkom.web.tomek.dao.CarDataDAO;
 import pl.altkom.web.tomek.dao.CarDataDAOImpl;
 
 import javax.annotation.Resource;
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,16 +27,15 @@ public class SaveCarDataServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req
             , HttpServletResponse resp)
-            throws ServletException, IOException
-    {
+            throws ServletException, IOException {
 
-        Car car = new Car();
+        Car car = (Car) req.getSession().getAttribute("car");
 
-        car.setBrand(req.getParameter("brand"));
-        car.setModel(req.getParameter("model"));
-        car.setYearOfProduction(Integer.parseInt(req.getParameter("production")));
-        car.setMileage(req.getParameter("mileage"));
-        car.setMileage(req.getParameter("capacity"));
+//        car.setBrand(req.getParameter("brand"));
+//        car.setModel(req.getParameter("model"));
+//        car.setProduction(Integer.parseInt(req.getParameter("production")));
+//        car.setMileage(req.getParameter("mileage"));
+//        car.setMileage(req.getParameter("capacity"));
 
         CarDataDAO dao = new CarDataDAOImpl();
         try {
@@ -46,6 +43,8 @@ public class SaveCarDataServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        req.getSession().removeAttribute("car");
 
         req.getRequestDispatcher("/hello").forward(req, resp);
 

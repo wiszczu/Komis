@@ -4,7 +4,7 @@ public class Car {
     private int id;
     private String brand;
     private String model;
-    private int yearOfProduction;
+    private int production;
     private String mileage;
     private String capacity;
 
@@ -28,12 +28,12 @@ public class Car {
         this.model = model;
     }
 
-    public int getYearOfProduction() {
-        return yearOfProduction;
+    public int getProduction() {
+        return production;
     }
 
-    public void setYearOfProduction(int yearOfProduction) {
-        this.yearOfProduction = yearOfProduction;
+    public void setProduction(int production) {
+        this.production = production;
     }
 
     public String getMileage() {
